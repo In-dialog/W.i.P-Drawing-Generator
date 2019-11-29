@@ -14,7 +14,7 @@ public class DrawSimbol : MonoBehaviour
     public Vector3 recPos;
 
     public int caseSwitch;
-    int time;
+    double time, rTime;
 
     public float speed;
     public float rotationspeed = 50;
@@ -34,7 +34,7 @@ public class DrawSimbol : MonoBehaviour
         CreateList();
         TargetList();
         ItereteList();
-        caseSwitch = 1;
+        //caseSwitch = 2;
     }
 
     void Update()
@@ -44,7 +44,7 @@ public class DrawSimbol : MonoBehaviour
             SetDis = Random.Range(3, 20);
             caseSwitch++;
             Debug.Log("newList");
-            randomMode ^= true;
+            //randomMode ^= true;
             CreateList();
             TargetList();
         }
@@ -147,6 +147,15 @@ public class DrawSimbol : MonoBehaviour
                 //Check if rotation has finished so we can increase the speed of the movmemnt
                 if (pastRotation != Quaternion.LookRotation(newDirection))
                 {
+                    rTime+=Time.deltaTime;
+                    Debug.Log(rTime);
+                    if (rTime > 10)
+                    {
+                        Debug.LogWarning("ToLong!!!");
+
+                        caseSwitch++;
+                        rTime = 0;
+                    }
                     transform.position += transform.forward * step;
                     linearMovment = false;
                     Debug.Log("Im rotating");
@@ -157,6 +166,8 @@ public class DrawSimbol : MonoBehaviour
                     if (Dist > 0.8f) transform.position += transform.forward * step1;
                     else transform.position += transform.forward * step;
                     linearMovment = true;
+                    rTime = 0;
+
                     Debug.Log("Im  not rotating");
                 }
 

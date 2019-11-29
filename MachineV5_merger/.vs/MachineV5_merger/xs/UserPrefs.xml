@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{2FD81E03-74A3-A4C9-DBA7-D8372A401160}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Final/HiResScreenShots.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Final/SerialComm/Scripts/SerialController.cs">
     <Files>
       <File FileName="Assets/Scripts/Final/DrawSimbol.cs" Line="138" Column="41" />
       <File FileName="Assets/Scripts/Final/PlacePoints.cs" />
       <File FileName="Assets/Scripts/Final/Restart.cs" />
-      <File FileName="Assets/Scripts/Final/HiResScreenShots.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Final/HiResScreenShots.cs" Line="70" Column="1" />
+      <File FileName="Assets/Scripts/Final/SerialComm/Scripts/SerialController.cs" Line="136" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
