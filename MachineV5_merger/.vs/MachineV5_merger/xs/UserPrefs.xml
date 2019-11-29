@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{2FD81E03-74A3-A4C9-DBA7-D8372A401160}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Final/Restart.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Final/DrawSimbol.cs" Line="138" Column="41" />
+      <File FileName="Assets/Scripts/Final/PlacePoints.cs" Line="81" Column="36" />
+      <File FileName="Assets/Scripts/SendToArduino.cs" Line="45" Column="3" />
+      <File FileName="Assets/Scripts/Final/GenerateSymbol.cs" Line="108" Column="1" />
+      <File FileName="Assets/Scripts/Final/Restart.cs" Line="14" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e96fdbb8-d2a4-482f-a4b2-d683a366f609" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
