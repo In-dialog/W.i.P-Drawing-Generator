@@ -1,4 +1,4 @@
-# W.i.P Drawing-Generator  by @in-dialog <br/>
+# W.i.P Drawing-Generator  by inDialog <br/>
 drawing generator for XY plotters. Made with Unity and developed to comnunicate over serial using  Grbl.
 
 ## Description<br/>
@@ -47,7 +47,7 @@ https://github.com/In-dialog/W.i.P-Drawing-Generator/blob/master/img/4.jpg
 		*Number of points
 		*Types of drawings
 <br/><br/>
-## **If you want to know more about the projects we do follow the links to more of our work** 
+## **If you want to know more about the projects** 
 <br/><br/>
 #poweredByID
 www.in-dialog.com
