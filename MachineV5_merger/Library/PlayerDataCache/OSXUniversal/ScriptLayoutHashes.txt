@@ -1,6 +1,6 @@
 OSXUniversal
 PlayerPath?
-/Users/segalcalin/Google Drive (1)/Unity _projects/MachineV5_merger/DrawingGeneratorWithPlotter_debug.app
+/Users/segalcalin/Documents/GitHub/W.i.P-Drawing-Generator/DrawingGeneratorWithPlotter_debug.app
 SceneListBegin?
 Assets/Drawing_1.unity
 SceneListEnd?
