@@ -12,7 +12,7 @@ public class DrawSimbol : MonoBehaviour
     public Transform bestTarget;
     Quaternion pastRotation;
     public Vector3 recPos;
-
+    public PlacePoints placePoints;
     public int caseSwitch;
     double time, rTime;
 
@@ -31,28 +31,32 @@ public class DrawSimbol : MonoBehaviour
 
     void Start()
     {
-        CreateList();
-        TargetList();
-        ItereteList();
+        Clear();
+
         //caseSwitch = 2;
     }
 
     void Update()
     {
-        if (objects1.Count == 0)
+
+
+        if (objects1.Count == 0 )
         {
+            placePoints.DestroyObjects();
+            placePoints.PointsInstance();
+
             SetDis = Random.Range(3, 20);
-            caseSwitch++;
+            //if (caseSwitch != 3) caseSwitch++;
+            //else caseSwitch = 1;
             Debug.Log("newList");
             //randomMode ^= true;
-            CreateList();
-            TargetList();
-        }
-        if (caseSwitch == 4)
+            Clear();
+        } 
+
+        if (objects1[0] == null)
         {
-            caseSwitch = 1;
+            Clear();
         }
-        if (target.Length < 1) return;
         if (randomMode) bestTarget = target[randomNumaber];
         else GetClosestEnemy(target);
         if (bestTarget == null) return;
@@ -72,7 +76,7 @@ public class DrawSimbol : MonoBehaviour
             case 3:
                 if (TargetDis > SetDis)
                 {
-                    Move(2);
+                    Move(1);
                     rotationleft = 360;
                 }
                 else
@@ -87,8 +91,12 @@ public class DrawSimbol : MonoBehaviour
 
     public void Clear()
     {
-        objects1 = new List<GameObject>();
+        objects1.Clear();
+        //Debug.Log("Im cleaning!!!   " + objects1.Count);
         target = new Transform[objects1.Count];
+        CreateList();
+        TargetList();
+        ItereteList();
     }
 
 
@@ -101,7 +109,7 @@ public class DrawSimbol : MonoBehaviour
                 object1 = objects1[i];
                 float Dist = Vector3.Distance(this.gameObject.transform.position, object1.gameObject.transform.position);
 
-                if (Dist < 0.15F && time > timeR)
+                if (Dist < 0.1F)
                 {
                     ReadyToMove = false;
                     objects1.RemoveAt(i);
@@ -133,27 +141,22 @@ public class DrawSimbol : MonoBehaviour
 
             case 2:
                 linearMovment = false;
-                //linearMovment = false;
                 float step = 10 * Time.deltaTime;
                 pastRotation = this.transform.rotation;
-                // Determine which direction to rotate towards
                 Vector3 targetDirection = object1.transform.position - transform.position;
-                // The step size is equal to speed times frame time.
                 float singleStep = step / randomNumaber2;
-                // Rotate the forward vector towards the target direction by one step
                 Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.1F);
-                // Calculate a rotation a step closer to the target and applies rotation to this object
                 transform.rotation = Quaternion.LookRotation(newDirection);
-                //Check if rotation has finished so we can increase the speed of the movmemnt
+
                 if (pastRotation != Quaternion.LookRotation(newDirection))
                 {
                     rTime+=Time.deltaTime;
-                    Debug.Log(rTime);
+                    //Debug.Log(rTime);
                     if (rTime > 10)
                     {
                         Debug.LogWarning("ToLong!!!");
-
-                        caseSwitch++;
+                        transform.position = object1.transform.position;
+                        //caseSwitch++;
                         rTime = 0;
                     }
                     transform.position += transform.forward * step;
@@ -191,6 +194,8 @@ public class DrawSimbol : MonoBehaviour
                 transform.RotateAround(object1.transform.position, Vector3.up, rotation);
                 //Debug.Log("Im circle with radious "+ SetDis+"  and center  "+ object1.transform.position);
                 break;
+
+
         }
     }
 
@@ -198,6 +203,7 @@ public class DrawSimbol : MonoBehaviour
     {
         objects1 = new List<GameObject>();
         objects1 = GameObject.FindGameObjectsWithTag("FD").ToList();
+    
     }
 
 
@@ -213,10 +219,12 @@ public class DrawSimbol : MonoBehaviour
     Transform GetClosestEnemy (Transform[] enemies)
 	{
 		bestTarget = null;
+        
 		float closestDistanceSqr = Mathf.Infinity;
 		Vector3 currentPosition = transform.position;
 		foreach(Transform potentialTarget in enemies)
 		{
+            //if (potentialTarget == null) return;
 			Vector3 directionToTarget = potentialTarget.position - currentPosition;
 			float dSqrToTarget = directionToTarget.sqrMagnitude;
 			if(dSqrToTarget < closestDistanceSqr)

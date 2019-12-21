@@ -1,16 +1,15 @@
 ﻿<Properties StartupConfiguration="{2FD81E03-74A3-A4C9-DBA7-D8372A401160}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Final/DrawSimbol.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SimpleNover.cs">
     <Files>
-      <File FileName="Assets/Scripts/Final/DrawSimbol.cs" Line="47" Column="34" />
-      <File FileName="Assets/Scripts/Final/PlacePoints.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Final/Restart.cs" />
-      <File FileName="Assets/Scripts/Final/HiResScreenShots.cs" Line="70" Column="1" />
-      <File FileName="Assets/Scripts/Final/SerialComm/Scripts/SerialController.cs" Line="136" Column="1" />
+      <File FileName="Assets/Scripts/Final/DrawSimbol.cs" Line="168" Column="101" IsPinned="True" />
+      <File FileName="Assets/Scripts/Final/PlacePoints.cs" Line="95" Column="64" />
+      <File FileName="Assets/SimpleNover.cs" Line="26" Column="15" />
+      <File FileName="Assets/Scripts/Final/SerialComm/Scripts/SerialController.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e96fdbb8-d2a4-482f-a4b2-d683a366f609" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="36b9f54c-4493-41da-a6e4-729f0770d5ab" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

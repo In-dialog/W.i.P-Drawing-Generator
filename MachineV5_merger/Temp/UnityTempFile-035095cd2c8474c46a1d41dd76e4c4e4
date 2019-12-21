@@ -208,3 +208,5 @@
 "Assets/Scripts/Final/SerialComm/Scripts/Threads/SerialThread.cs"
 "Assets/Scripts/Final/SerialComm/Scripts/Threads/SerialThreadCustomDelimiter.cs"
 "Assets/Scripts/Final/SerialComm/Scripts/Threads/SerialThreadLines.cs"
+"Assets/Scripts/Math2d.cs"
+"Assets/SimpleNover.cs"

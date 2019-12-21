@@ -81,6 +81,8 @@
     <Compile Include="Assets\Scripts\Final\SerialComm\Scripts\Threads\SerialThread.cs" />
     <Compile Include="Assets\Scripts\Final\SerialComm\Scripts\Threads\SerialThreadCustomDelimiter.cs" />
     <Compile Include="Assets\Scripts\Final\SerialComm\Scripts\Threads\SerialThreadLines.cs" />
+    <Compile Include="Assets\Scripts\Math2d.cs" />
+    <Compile Include="Assets\SimpleNover.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/segalcalin/Documents/GitHub/W.i.P-Drawing-Generator/MachineV5_merger/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

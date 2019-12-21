@@ -17,6 +17,7 @@ public class SendToArduino : MonoBehaviour
     public List<string> positionsToSend = new List<string>();
     public List<Vector3> positions = new List<Vector3>();
 
+
     double timeT;
     void Start()
     {
@@ -34,18 +35,19 @@ public class SendToArduino : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))positions.Clear();
         ///////// get coordonates from Pen
         timeT += Time.deltaTime;
-        if (drawSimbol.linearMovment)
+        if (drawSimbol.linearMovment & drawSimbol.bestTarget!=null)
         {
             if (!positions.Contains(drawSimbol.bestTarget.position))
             {
                 positions.Add(drawSimbol.bestTarget.position);
+                positionsToSend.Add("G00X" + Mathf.Round(drawSimbol.bestTarget.position.x).ToString() + "Y" + Mathf.Round(drawSimbol.bestTarget.position.z).ToString());
             }
         }
         else
         {
             if (timeT > 0.2f)
             {
-                positions.Add(drawSimbol.transform.position);
+                //positions.Add(drawSimbol.transform.position);
                 timeT = 0;
             }
         }
@@ -62,11 +64,12 @@ public class SendToArduino : MonoBehaviour
             }
             else
             {
-                if (_messages[0].Contains("ok") & positions.Count > 0)
+                if (_messages[0].Contains("ok") & positionsToSend.Count > 0)
                 {
-                    string toSend = "G00X" + Mathf.Round(positions[0].x).ToString() + "Y" + Mathf.Round(positions[0].z).ToString();
-                    serialController.SendSerialMessage(toSend);
-                    positions.RemoveAt(0);
+                    //string toSend = "G00X" + Mathf.Round(positions[0].x).ToString() + "Y" + Mathf.Round(positions[0].z).ToString();
+                    serialController.SendSerialMessage(positionsToSend[0]);
+                    //positions.RemoveAt(0);
+                    positionsToSend.RemoveAt(0);
                     _messages.RemoveAt(0);
                 }
             }

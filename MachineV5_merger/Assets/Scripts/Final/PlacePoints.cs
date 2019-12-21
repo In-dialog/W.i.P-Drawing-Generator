@@ -1,11 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 
 public class PlacePoints : MonoBehaviour {
-    public DrawSimbol drawSimbol;
-	public GameObject prefab;
+    public GameObject prefab;
     public bool isConvex = false;
     //int t;
     Vector3 center = new Vector3(0, 0, 0);
@@ -14,21 +10,51 @@ public class PlacePoints : MonoBehaviour {
     Mesh mesh;
     public int maxPoints = 10;
     GameObject[] objects;
-   public  Material color;
-
-
+    public  Material color;
+    public GameObject plane;
+    public int _case;
+    public int step = 10;
+    public float maxX, maxZ;
     Vector3[] baseVertices ;
+    public int zPos, xPos, stroed;
+    public int [] zpos = new int[0];
+   public  int m1, m2, m3;
+    public int pM1, pM2, pM3;
 
+
+    //int pl
     void Awake() {
+        zpos = new int[(int)step];
+        for (int i = 0; i < step; i++)
+        {
+            if(i==0) zpos[i] =(int)-(step *5);
+            if (i >= 1) zpos[i] = zpos[i-1] + (int)Random.Range(10,15);
 
-        GameObject plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
-        mF = plane.GetComponent<MeshFilter>();
+        }
 
-        mF.mesh = UpdateMesh(mF.mesh,(16/2/5)*10,(30/2/5)*10);
-        //plane.transform.localScale = new Vector3(15,1,20);
-        plane.GetComponent<MeshRenderer>().sharedMaterial = color;
-        PointsInstance(maxPoints);
-        plane.transform.position = new Vector3(0, -1, 0);
+
+        if (_case == 1)
+        {
+            if (plane == null)
+            {
+                plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
+                mF = plane.GetComponent<MeshFilter>();
+                mF.mesh = UpdateMesh(mF.mesh, (16 / 2 / 5) * 10, (30 / 2 / 5) * 10);
+                //mF.transform.position = new Vector3(160,0,300);
+                plane.GetComponent<MeshRenderer>().sharedMaterial = color;
+            }
+            else
+            {
+                mF = plane.GetComponent<MeshFilter>();
+            }
+            //PointsInstance();
+            plane.transform.position = new Vector3(0, -1, 0);
+        }
+        else
+        {
+            //zPos = (int)-maxZ;
+            //PointsInstance();
+        }
 
     }
     private void Update()
@@ -36,23 +62,71 @@ public class PlacePoints : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             DestroyObjects();
-            PointsInstance(maxPoints);
-            drawSimbol.Clear();
-
+            PointsInstance();
         }
     }
-    void  PointsInstance(int _maxPoints)
+    public void  PointsInstance()
     {
-        for (int i = 0; i < maxPoints; i++)
+
+        switch (_case)
         {
-            Vector3 point = mF.mesh.GetRandomPointOnSurface();
-            Quaternion rot = Quaternion.FromToRotation(Vector3.forward, center - point);
-            rot = new Quaternion(0, 0, 0, 0);
+            case 1:
+                for (int i = 0; i < maxPoints; i++)
+                {
+                    Vector3 point = mF.mesh.GetRandomPointOnSurface();
+                    Quaternion rot = Quaternion.FromToRotation(Vector3.forward, center - point);
+                    rot = new Quaternion(0, 0, 0, 0);
+                    GameObject temp = Instantiate(prefab, point, rot);
+                    temp.name = "point";
+                }
+                break;
+
+            case 2:
 
 
-            GameObject temp = Instantiate(prefab, point, rot);
-            temp.name = "point";
+                //zPos ++;
+                if (zPos >= maxZ | zPos < -maxZ)
+                {
+                    stroed += 1;
+                    xPos = stroed;
+                    zPos = 0;
+                }
+                zPos = zPos+(int)step;
+                //xPos= (int)Mathf.Sign(xPos * Time.deltaTime);
+                //xPos += (int)Mathf.Cos(xPos) + (int)Mathf.Sign(xPos) + (int)Mathf.Sign(zPos) / (int)Mathf.Sign(xPos * Time.deltaTime);
+
+                //xPos = (int)Mathf.Cos(xPos) - (int)Mathf.Sin(xPos * zPos * stroed) + xPos;
+                //xPos += (int)Mathf.Sin(zpos[zPos]) + (int)Mathf.Cos(xPos * zpos[zPos] * stroed) * (int)Mathf.Atan(xPos);
+
+                //m1 += Random.Range(pM3, step);
+                //m2 = Random.Range((int)-maxX,(int)maxX);
+                //m3 = Random.Range(pM1,(int)maxX/17);
+                //if (m1 > maxZ)
+                //{
+                //    m1 = 0;
+                //    m3 = 0;
+                //}
+                //Vector3 point1 = new Vector3(m2,0, m1 + m3);
+
+                //pM1 = m1;
+                //pM2 = m2;
+                //pM3 = m3;
+                xPos = (int)Mathf.Cos(zPos) + (int)Mathf.Cos(xPos) * (int)Time.timeSinceLevelLoad;
+                //xPos += 1; 
+                //xPos = (int)Random.Range(-maxX, maxX);
+                Vector3 point2 = new Vector3(xPos, 0, zPos);
+                Quaternion rot2 = new Quaternion(0, 0, 0, 0);
+                GameObject temp2 = Instantiate(prefab, point2, rot2);
+                //temp.name = "point";
+                
+                break;
+
+
+
         }
+
+
+
 
     }
         
@@ -63,8 +137,7 @@ public class PlacePoints : MonoBehaviour {
     {
         objects = new GameObject[maxPoints];
         objects = GameObject.FindGameObjectsWithTag("FD");
-        for (var i = 0; i < objects.Length; i++)
-        Destroy(objects[i]);
+        for (var i = 0; i < objects.Length; i++) Destroy(objects[i]);
     }
 
 
@@ -78,7 +151,6 @@ public class PlacePoints : MonoBehaviour {
         {
             var vertex = baseVertices[i];
             vertex.x = vertex.x * scaleX;
-            //vertex.y = vertex.y; 
             vertex.z = vertex.z * scaleZ;
             vertices[i] = vertex;
         }
