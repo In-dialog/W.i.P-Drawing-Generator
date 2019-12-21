@@ -39,7 +39,7 @@ public class PlacePoints : MonoBehaviour {
             {
                 plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
                 mF = plane.GetComponent<MeshFilter>();
-                mF.mesh = UpdateMesh(mF.mesh, (16 / 2 / 5) * 10, (30 / 2 / 5) * 10);
+                mF.mesh = UpdateMesh(mF.mesh, (maxX / 2 / 5) * 10, (maxZ / 2 / 5) * 10);
                 //mF.transform.position = new Vector3(160,0,300);
                 plane.GetComponent<MeshRenderer>().sharedMaterial = color;
             }
@@ -114,7 +114,7 @@ public class PlacePoints : MonoBehaviour {
                 xPos = (int)Mathf.Cos(zPos) + (int)Mathf.Cos(xPos) * (int)Time.timeSinceLevelLoad;
                 //xPos += 1; 
                 //xPos = (int)Random.Range(-maxX, maxX);
-                Vector3 point2 = new Vector3(xPos, 0, zPos);
+                Vector3 point2 = new Vector3(xPos, 0, zPos +1 );
                 Quaternion rot2 = new Quaternion(0, 0, 0, 0);
                 GameObject temp2 = Instantiate(prefab, point2, rot2);
                 //temp.name = "point";

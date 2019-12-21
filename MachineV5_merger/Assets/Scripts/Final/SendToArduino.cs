@@ -21,7 +21,7 @@ public class SendToArduino : MonoBehaviour
     double timeT;
     void Start()
     {
-        drawSimbol = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<DrawSimbol>();
+        //drawSimbol = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<DrawSimbol>();
         serialController = this.GetComponent<SerialController>();
         getPortNames();
         if (serial_ports.Count - 1 == 0)
@@ -33,24 +33,24 @@ public class SendToArduino : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))positions.Clear();
-        ///////// get coordonates from Pen
-        timeT += Time.deltaTime;
-        if (drawSimbol.linearMovment & drawSimbol.bestTarget!=null)
-        {
-            if (!positions.Contains(drawSimbol.bestTarget.position))
-            {
-                positions.Add(drawSimbol.bestTarget.position);
-                positionsToSend.Add("G00X" + Mathf.Round(drawSimbol.bestTarget.position.x).ToString() + "Y" + Mathf.Round(drawSimbol.bestTarget.position.z).ToString());
-            }
-        }
-        else
-        {
-            if (timeT > 0.2f)
-            {
-                //positions.Add(drawSimbol.transform.position);
-                timeT = 0;
-            }
-        }
+        /////////// get coordonates from Pen
+        //timeT += Time.deltaTime;
+        //if (drawSimbol.linearMovment & drawSimbol.bestTarget!=null)
+        //{
+        //    if (!positions.Contains(drawSimbol.bestTarget.position))
+        //    {
+        //        positions.Add(drawSimbol.bestTarget.position);
+        //        positionsToSend.Add("G00X" + Mathf.Round(drawSimbol.bestTarget.position.x).ToString() + "Y" + Mathf.Round(drawSimbol.bestTarget.position.z).ToString());
+        //    }
+        //}
+        //else
+        //{
+        //    if (timeT > 0.2f)
+        //    {
+        //        //positions.Add(drawSimbol.transform.position);
+        //        timeT = 0;
+        //    }
+        //}
         ///////// compose string
         ReciveData();
 
@@ -59,7 +59,7 @@ public class SendToArduino : MonoBehaviour
             if (_messages[0].Contains("Grbl"))
             {
                 Debug.Log("!!!!!!!");
-                serialController.SendSerialMessage("G00X00Y00");
+                serialController.SendSerialMessage("G00X00Y00F1500.000");
                 _messages.RemoveAt(0);
             }
             else
@@ -93,7 +93,6 @@ public class SendToArduino : MonoBehaviour
                 if (dev.StartsWith("/dev/tty.usbmodem"))
                     serial_ports.Add(dev);
                 else
-
                     Debug.LogWarning(System.String.Format(dev));
             }
         }

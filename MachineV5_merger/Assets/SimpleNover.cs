@@ -23,7 +23,7 @@ namespace LineSegmentsIntersection
         public int rottationSpeed = 100;
         bool firstTime = true;
        public float angle;
-        Vector3 intPoint;
+       public  Vector3 intPoint,p1,p2,center;
 
         // Start is called before the first frame update
         void Start()
@@ -36,26 +36,7 @@ namespace LineSegmentsIntersection
         // Update is called once per frame
         void Update()
         {
-            //place.DestroyObjects();
-            //place.PointsInstance();
-
-
-            //if (poinTarget != null)
-            //{
-            //curentDist = Vector3.Distance(this.gameObject.transform.position, poinTarget.gameObject.transform.position);
-            //float step1 = 10 * Time.deltaTime;
-
-            //    if (curentDist < 5f)
-            //    {
-            //        pastTargets.Add(poinTarget.transform.position);
-
-            //        CalculateTarget();
-            //        pastDist = Vector3.Distance(pastTargets[pastTargets.Count-1], poinTarget.transform.position);
-            //    }
-            //    else
-            //    {
-            //        transform.position = Vector3.MoveTowards(this.gameObject.transform.position, poinTarget.transform.position, step1);
-            //    }
+         
             if (poinTarget != null)
             {
                 float curentDist = Vector3.Distance(this.gameObject.transform.position, poinTarget.gameObject.transform.position);
@@ -69,7 +50,6 @@ namespace LineSegmentsIntersection
                     place.PointsInstance();
                     maxRotation = Random.Range(1, 5);
                     maxRandom = Random.Range(2, 100);
-                    //firstTime = false;
 
                 }
 
@@ -89,28 +69,59 @@ namespace LineSegmentsIntersection
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                     transform.position += transform.forward * Time.deltaTime * maxSpeed;
 
-                    //Debug.Log("Did Hit");
-                    pastLocation = this.transform ;
+                    pastLocation = this.transform;
                     pastDistance = curentDist;
-                    firstTime = true;
 
-                    string arduinoString = "G01X" + Mathf.Round(this.transform.position.x).ToString() + "Y" + Mathf.Round(this.transform.position.z).ToString() + " F1500.000";
-                    if (!sendToArduino.positionsToSend.Contains(arduinoString))
-                        sendToArduino.positionsToSend.Add(arduinoString);
+                    if (!firstTime )
+                    {
+                        float j =  -1*(p1.z - center.z);
+                        Debug.Log(j + "  j is  !!!!!");
+                        float i = -1 * (p1.x - center.x);
+                        Debug.Log(i + "  i is  !!!!!");
+                        Debug.Log(p2 + "  p2 is  ");
+                        if (j + i == 0) return;
+                        //float j = p1.z - offSet;
+                        //offSet = p1.x - center.x;
+                        //float i = p1.x - offSet;
+                        if (angle == 1)
+                        {
+                            string arduinoString = "G02X" + p2.x + "Y"+p2.z + "I" + i + "J" + j;
+                            if (!sendToArduino.positionsToSend.Contains(arduinoString))
+                                sendToArduino.positionsToSend.Add(arduinoString);
+                        }
+                        if (angle == -1)
+                        {
+                            //string arduinoString = "G03X" + Mathf.Round(hit.transform.position.x).ToString() + "Y" + Mathf.Round(hit.transform.position.z).ToString();
+                            //if (!sendToArduino.positionsToSend.Contains(arduinoString))
+                            //    sendToArduino.positionsToSend.Add(arduinoString);
+                        }
+
+                    }
+                    else
+                    {
+                        string arduinoString = "G01X" + Mathf.Round(hit.transform.position.x).ToString() + "Y" + Mathf.Round(hit.transform.position.z).ToString();
+                        if (!sendToArduino.positionsToSend.Contains(arduinoString))
+                            sendToArduino.positionsToSend.Add(arduinoString);
+                    }
+                    firstTime = true;
+                    //Debug.Log("Did Hit");
+
                 }
                 else
                 {
+                    if (pastDistance == 0) pastDistance = 2;
                     if (firstTime)
                     {
                         Vector3 heading = poinTarget.transform.position - transform.position;
                         angle = AngleDir(transform.forward, heading, transform.up);
-               
+                        p1 = transform.position;
                         firstTime = false;
                     }
                     if (angle == -1)
                     {
                         intPoint = pastLocation.position + (-pastLocation.right) * pastDistance;
-                        transform.RotateAround(intPoint, pastLocation.up, -maxSpeed * Time.deltaTime);
+                        center = intPoint;
+                        transform.RotateAround(intPoint, pastLocation.up, -rottationSpeed * Time.deltaTime);
                         print("Object is to the left   AntiClock");
 
                     }
@@ -118,74 +129,17 @@ namespace LineSegmentsIntersection
                     {
                         Debug.Log("Object is to the right    Clock");
                         maxRandom = maxSpeed;
-
                         intPoint = pastLocation.position + (pastLocation.right) * pastDistance;
-                        transform.RotateAround(intPoint, pastLocation.up, maxSpeed * Time.deltaTime);
+                        center = intPoint;
+                        transform.RotateAround(intPoint, pastLocation.up, rottationSpeed * Time.deltaTime);
                     }
                     else
                         print("Object is directly ahead");
 
-                    //intPoint = pastLocation.position + (-pastLocation.right) * pastDistance;
-                    //transform.RotateAround(intPoint, pastLocation.up, -maxSpeed * Time.deltaTime);
-                    //intPoint = temp;
-                    //test.transform.position = intPoint;
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+                    p2 = transform.position;
                     //Debug.Log("Did not Hit");
                 }
-            
-
-                //var q = Quaternion.LookRotation(poinTarget.transform.position - transform.position);
-                ////transform.rotation = Quaternion.LookRotation(newDirection);
-                //if (transform.rotation != q)
-                //{
-                //    b2 = (transform.position );
-                //    if (firstTime == false)
-                //    {
-                //        a1 = (transform.position + transform.forward * -10000);
-                //        a2 = (transform.position + transform.forward * 10000);
-                //        firstTime = true;
-                //    }
-                //    //rottationSpeed = (int)(rottationSpeed - curentDist / 10);
-                //    transform.rotation = Quaternion.RotateTowards(transform.rotation, q, rottationSpeed * 10 * Time.deltaTime);
-
-                //    //transform.LookAt(pastTargets[0]);
-                //    transform.position += transform.forward * Time.deltaTime * rottationSpeed;
-                //    string arduinoString = "G01X" + Mathf.Round(this.transform.position.x).ToString() + "Y" + Mathf.Round(this.transform.position.z).ToString() + " F1500.000";
-                //    if (!sendToArduino.positionsToSend.Contains(arduinoString))
-                //        sendToArduino.positionsToSend.Add(arduinoString);
-                //    Debug.Log("ImRoating");
-                //}
-                //else
-                //{
-                //    firstTime = false;
-                //    if (b2 != Vector3.zero)
-                //    {
-                //        //a1 = pastTargets[1];
-                //        //b2 = transform.position;
-                //        b1 = (transform.position + transform.forward * -10000);
-                //        if (!Math2d.LineSegmentsIntersection(new Vector2(a1.x, a1.z), new Vector2(a2.x, a2.z), new Vector2(b1.x, b1.z), new Vector2(b2.x, b2.z), out intPoint)) intPoint = Vector2.zero;
-
-                //        Debug.DrawLine(b1, b2);
-                //        Debug.DrawLine(a1, a2);
-
-                //        Debug.LogError("PointRecorde" + b2);
-                //        b2 = Vector3.zero;
-                //    }
-                //    transform.position += transform.forward * Time.deltaTime * maxSpeed;
-                //    string arduinoString = "G01X" + Mathf.Round(poinTarget.transform.position.x).ToString() + "Y" + Mathf.Round(poinTarget.transform.position.z).ToString() + " F1500.000";
-                //    if (!sendToArduino.positionsToSend.Contains(arduinoString))
-                //        sendToArduino.positionsToSend.Add(arduinoString);
-                //    //transform.LookAt(poinTarget.transform);
-                //    //a1 = transform.position;
-                //    //a2 = (transform.position + transform.forward * -10000);
-
-                //}
-
-                //if(pastTargets.Count>1 & curentDist < 5f)
-                //transform.RotateAround(pastTargets[1], Vector3.up, 100 * Time.deltaTime);
-
-                //transform.position += transform.forward * Time.deltaTime * 10;
-
             }
             else
             {
