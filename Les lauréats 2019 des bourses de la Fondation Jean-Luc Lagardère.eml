@@ -1,0 +1,138 @@
+Delivered-To: calin.segal@in-dialog.com
+Received: by 2002:aed:2444:0:0:0:0:0 with SMTP id s4csp886113qtc;
+        Tue, 28 Jan 2020 10:30:38 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyuPz1BTNeKOa/X7qtK7rZKyzg0l3gr1U+4qpePxZRq7wNrJ/pMt7DM2XKv9F4WclH/LJiM
+X-Received: by 2002:a1c:1f51:: with SMTP id f78mr6431967wmf.60.1580236238349;
+        Tue, 28 Jan 2020 10:30:38 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1580236238; cv=none;
+        d=google.com; s=arc-20160816;
+        b=1E4zEZw2mUU0eFhMeGX3Dh5xEgHdABR3jJuPDfR7jJesDjmoWJgqHPDBh9CNRHqT5t
+         m2heFetnzkFRiwByCYgB7stThO9kKgBYQGUBQ+sbVC6TecyZx277mVNFv19ZwIIczcT0
+         +Bn7mVcPI0c1jT7SnD78SnWagYeinrSQZ36SLroVFouthrEWEgEaK5ml45AgCXDrAaYO
+         PdfEVeqhx3czHmHeTIr+8VCiheFvtuuwYmxZEmmj8WWeC7WuKDp2WnGBdBzIY+vHp5NZ
+         wL7sUQ75RMFnVXIOYxELa5B559+mAABS00qS7V+lpmHktOvTmk5/UJ15955iCquI7jyL
+         0eDg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:subject:to:from:list-unsubscribe:mime-version:reply-to
+         :feedback-id:message-id:dkim-signature;
+        bh=pb/+Q2+fzWt5PMYxwNdZvhRQm5z/GKUVD5LmLndSMKE=;
+        b=thrpbL9CHFq4yWvNG1y8QtlIJ3FyQykweiJpSYC83F+Kq5EcvGUMfdOIW2uARxz/+D
+         lQ6pzCXWYuzbNAXUsw+fmCClIPT/kFXjm637kwfRtGgeI3VULAgsU6+/uyHu0mmpAeqT
+         o1KtMKmMIpBVFs8DmladGSsMVZikt/2IfklU99PPuDB39jcIu1I5F59+k9D1sJWTU0+0
+         PeFroL2yAomtpXuLy7txgkG+1M+jeuoZ4BwPQ2cJQxt5lkbDGKIrffHaokEtxQ84w5DN
+         GmDsIbgnd4EdnQplq9RiLHDXLoQK0QFs2csuulxKcPtDU08YtYhZ4pT+JL2sAhCIR3CM
+         MqXw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dircom.lagardere.info header.s=do-43303 header.b=IFUUFLEa;
+       spf=pass (google.com: domain of fondjll@dircom.lagardere.info designates 185.14.228.191 as permitted sender) smtp.mailfrom=fondjll@dircom.lagardere.info;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=dircom.lagardere.info
+Return-Path: <fondjll@dircom.lagardere.info>
+Received: from smtp-228-191.emm24.net (smtp-228-191.emm24.net. [185.14.228.191])
+        by mx.google.com with ESMTPS id b192si2670079wmb.12.2020.01.28.10.30.37
+        for <calin.segal@in-dialog.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 28 Jan 2020 10:30:38 -0800 (PST)
+Received-SPF: pass (google.com: domain of fondjll@dircom.lagardere.info designates 185.14.228.191 as permitted sender) client-ip=185.14.228.191;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dircom.lagardere.info header.s=do-43303 header.b=IFUUFLEa;
+       spf=pass (google.com: domain of fondjll@dircom.lagardere.info designates 185.14.228.191 as permitted sender) smtp.mailfrom=fondjll@dircom.lagardere.info;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=dircom.lagardere.info
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=do-43303; d=dircom.lagardere.info;
+ h=Message-Id:Reply-To:Mime-Version:Content-Type:List-Unsubscribe:From:To:
+ Subject:Date; i=fondjll@dircom.lagardere.info;
+ bh=pb/+Q2+fzWt5PMYxwNdZvhRQm5z/GKUVD5LmLndSMKE=;
+ b=IFUUFLEaAQla/sPWVPpGaSaX4b1Jh/bbt3a6cYY3TknyVmgznYbcWBAqeEu1E8FIX/FM+0ggWtEX
+   SbPW8DFzSrP60RhDqEAr3lqYuIO41HZQaxpULMUFGiMzna40P//UpDdnq1dwBdkg8nX03jltVpyB
+   QCLGF5CxNjgYGY3Ye5U=
+Message-Id: <4189-500060588-8802-1580236200-614-Y2FsaW4uc2VnYWxAaW4tZGlhbG9nLmNvbQ==@DNET-S726>
+Feedback-ID: 4189-500060588-614:DLNET
+X-SignalSpam-CID: 4189-500060588-614:DLNET
+Reply-To: "=?iso-8859-1?Q?Fondation_Jean=2DLuc_Lagard=E8re?=" <qcamus@lagardere.fr>
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_DNET_Part_1.4189-500060588-8802-1580222026-614"
+List-Unsubscribe: <mailto:abuse@dircom.lagardere.info?subject=DNET-UNSUBSCRIBE-4189-500060588-8802-1580234412-614-e52c7375>
+X-Mailer: DNET 5.1.0.8802
+From: "=?iso-8859-1?Q?Fondation_Jean=2DLuc_Lagard=E8re?=" <fondjll@dircom.lagardere.info>
+To:  <calin.segal@in-dialog.com>
+Subject: =?iso-8859-1?Q?Les_laur=E9ats_2019_des_bourses_de_la_Fondation_Jean=2DLuc?=
+	=?iso-8859-1?Q?_Lagard=E8re?=
+Date: Tue, 28 Jan 2020 19:30:22 +0100
+
+
+------=_DNET_Part_1.4189-500060588-8802-1580222026-614
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Si ce message ne s=27affiche pas correctement=2C=0D=0Ahttp=3A=2F=2Fdircom=
+=2Elagardere=2Einfo=2Ftrk=2F57320=2F4189=2F500060588=2F8802=2F614=2Fe52c7=
+375=2F=3Fs=3D105d=2D2262=2D21CA=2De52c7375=2D266=0D=0Avisualisez=2Dle en =
+ligne=2E=0D=0A=0D=0A=0D=0A=0D=0A=0D=0ACOMMUNIQU=C9 DE PRESSE=0D=0AVeuille=
+z trouver notre communiqu=E9 de presse =AB Les laur=E9ats 2019 des bourse=
+s de la Fondation Jean=2DLuc Lagard=E8re =BB du 28 janvier=0D=0A2020=2E=
+=0D=0APour visualiser le communiqu=E9=2C=0D=0Ahttp=3A=2F=2Fdircom=2Elagar=
+dere=2Einfo=2Ftrk=2F57322=2F4189=2F500060588=2F8802=2F614=2Fe52c7375=2F=
+=0D=0Asuivez ce lien=2E=0D=0AVous pouvez =E9galement t=E9l=E9charger la p=
+hoto des laur=E9ats=0D=0Ahttp=3A=2F=2Fdircom=2Elagardere=2Einfo=2Ftrk=2F5=
+7323=2F4189=2F500060588=2F8802=2F614=2Fe52c7375=2F=0D=0Avia ce lien=0D=0A=
+=0D=0A=0D=0ASi vous ne souhaitez plus recevoir de message de notre part=
+=2C=0D=0Ahttp=3A=2F=2Fdircom=2Elagardere=2Einfo=2Ftrk=2F57324=2F4189=2F50=
+0060588=2F8802=2F614=2Fe52c7375=2F=3Fs=3D105d=2D266=2D1dce51ac=2D2262=2De=
+52c7375=2D4=2D0=0D=0Arendez=2Dvous sur cette page=2E=0D=0A
+------=_DNET_Part_1.4189-500060588-8802-1580222026-614
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+=3Chtml=3E=0D=0A=3Chead=3E=0D=0A=3Ctitle=3E=3C=2Ftitle=3E=0D=0A=3C=2Fhead=
+=3E=0D=0A=3Cbody=3E=0D=0A=3Cp align=3D=22center=22=3E=3Cfont face=3D=22Ar=
+ial=2C Helvetica=2C sans=2Dserif=22 size=3D=222=22=3E=3Cfont size=3D=221=
+=22=3ESi ce message ne s=27affiche pas correctement=2C =3Ca href=3D=22htt=
+p=3A=2F=2Fdircom=2Elagardere=2Einfo=2Ftrk=2F57320=2F4189=2F500060588=2F88=
+02=2F614=2Fe52c7375=2F=3Fs=3D105d=2D2262=2D21CA=2De52c7375=2D266=22 targe=
+t=3D=22=5Fblank=22=3Evisualisez=2Dle en ligne=2E=3C=2Fa=3E=3C=2Ffont=3E=
+=3C=2Ffont=3E=3C=2Fp=3E=0D=0A=3Ctable border=3D=220=22 cellpadding=3D=220=
+=22 cellspacing=3D=220=22 align=3D=22center=22 style=3D=22width=3A 600px=
+=3B font=2Dfamily=3A Arial=2CHelvetica=2Csans=2Dserif=3B font=2Dsize=3A 1=
+1px=3B border=3A 1px solid =23000000=3B=22=3E=0D=0A=3Ctr=3E=0D=0A=3Ctd=3E=
+=3Cimg src=3D=22http=3A=2F=2Fdircom=2Elagardere=2Einfo=2Fimg=2F57321=2F41=
+89=2F500060588=2F8802=2F614=2Fe52c7375=2F=22 border=3D=220=22 alt=3D=22He=
+ader bleu=22 width=3D=22600=22 height=3D=22111=22 =2F=3E=3Cbr =2F=3E=3C=
+=2Ftd=3E=0D=0A=3C=2Ftr=3E=0D=0A=3Ctr=3E=0D=0A=3Ctd=3E=0D=0A=3Ctable borde=
+r=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=220=22 align=3D=22center=
+=22 style=3D=22width=3A 553px=3B height=3A 120px=3B=22=3E=0D=0A=3Ctr=3E=
+=0D=0A=3Ctd valign=3D=22top=22 width=3D=22400=22 style=3D=22padding=3A10p=
+x=3B=22=3E=0D=0A=3Cp align=3D=22justify=22=3E=3Cb=3E=3Cfont face=3D=22ari=
+al=2Chelvetica=2Csans=2Dserif=22 size=3D=222=22=3ECOMMUNIQU=26Eacute=3B D=
+E PRESSE=3C=2Ffont=3E=3C=2Fb=3E=3C=2Fp=3E=0D=0A=3Cp align=3D=22justify=22=
+=3E=3Cfont face=3D=22Arial=2C Helvetica=2C sans=2Dserif=22 size=3D=222=22=
+=3EVeuillez trouver notre communiqu=26eacute=3B de presse =26laquo=3B Les=
+ laur=26eacute=3Bats 2019 des bourses de la Fondation Jean=2DLuc Lagard=
+=26egrave=3Bre =26raquo=3B du 28 janvier 2020=2E=3C=2Ffont=3E=3C=2Fp=3E=
+=0D=0A=3Cp align=3D=22justify=22=3E=3Cfont face=3D=22Arial=2C Helvetica=
+=2C sans=2Dserif=22 size=3D=222=22=3EPour visualiser le communiqu=26eacut=
+e=3B=2C =3Ca href=3D=22http=3A=2F=2Fdircom=2Elagardere=2Einfo=2Ftrk=2F573=
+22=2F4189=2F500060588=2F8802=2F614=2Fe52c7375=2F=22 target=3D=22=5Fblank=
+=22=3Esuivez ce lien=3C=2Fa=3E=2E=3C=2Ffont=3E=3C=2Fp=3E=0D=0A=3Cp align=
+=3D=22justify=22=3E=3Cfont face=3D=22Arial=2C Helvetica=2C sans=2Dserif=
+=22 size=3D=222=22=3EVous pouvez =26eacute=3Bgalement t=26eacute=3Bl=26ea=
+cute=3Bcharger la photo des laur=26eacute=3Bats =3Ca href=3D=22http=3A=2F=
+=2Fdircom=2Elagardere=2Einfo=2Ftrk=2F57323=2F4189=2F500060588=2F8802=2F61=
+4=2Fe52c7375=2F=22 target=3D=22=5Fblank=22=3Evia ce lien=3C=2Fa=3E=3Cbr =
+=2F=3E=3C=2Ffont=3E=3C=2Fp=3E=0D=0A=3Cp align=3D=22justify=22=3E=3Cfont f=
+ace=3D=22Arial=2C Helvetica=2C sans=2Dserif=22 size=3D=222=22=3E=3C=2Ffon=
+t=3E=3C=2Fp=3E=0D=0A=3C=2Ftd=3E=0D=0A=3C=2Ftr=3E=0D=0A=3C=2Ftable=3E=0D=
+=0A=3C=2Ftd=3E=0D=0A=3C=2Ftr=3E=0D=0A=3C=2Ftable=3E=0D=0A=3Cp align=3D=22=
+center=22=3E=3Cfont face=3D=22Arial=2C Helvetica=2C sans=2Dserif=22 size=
+=3D=221=22=3ESi vous ne souhaitez plus recevoir de message de notre part=
+=2C =3Ca href=3D=22http=3A=2F=2Fdircom=2Elagardere=2Einfo=2Ftrk=2F57324=
+=2F4189=2F500060588=2F8802=2F614=2Fe52c7375=2F=3Fs=3D105d=2D266=2D1dce51a=
+c=2D2262=2De52c7375=2D4=2D0=22 target=3D=22=5Fblank=22=3Erendez=2Dvous su=
+r cette page=3C=2Fa=3E=3C=2Ffont=3E=3Cfont face=3D=22Arial=2C Helvetica=
+=2C sans=2Dserif=22 size=3D=222=22=3E=3Cfont size=3D=221=22=3E=2E=3C=2Ffo=
+nt=3E=3Cbr =2F=3E=3Cbr =2F=3E=3C=2Ffont=3E=3C=2Fp=3E=0D=0A=0D=0A=3Cimg sr=
+c=3D=22http=3A=2F=2Fdircom=2Elagardere=2Einfo=2Fop=2F4189=2F500060588=2F8=
+802=2F1580225618=2F614=2F2=2Fe52c7375=2Egif=22 width=3D=221=22 height=3D=
+=221=22 border=3D=220=22 alt=3D=22=22 =2F=3E=0D=0A=3C=2Fbody=3E=0D=0A=3C=
+=2Fhtml=3E=0D=0A
+------=_DNET_Part_1.4189-500060588-8802-1580222026-614--
+
+

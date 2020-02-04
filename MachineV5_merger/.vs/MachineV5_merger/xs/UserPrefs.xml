@@ -1,15 +1,20 @@
 ﻿<Properties StartupConfiguration="{2FD81E03-74A3-A4C9-DBA7-D8372A401160}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SimpleNover.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Final/SendToArduino.cs">
     <Files>
-      <File FileName="Assets/Scripts/Final/DrawSimbol.cs" Line="168" Column="101" IsPinned="True" />
-      <File FileName="Assets/Scripts/Final/PlacePoints.cs" Line="95" Column="64" />
-      <File FileName="Assets/SimpleNover.cs" Line="98" Column="29" />
-      <File FileName="Assets/Scripts/Final/SendToArduino.cs" Line="96" Column="21" />
+      <File FileName="Assets/SimpleNover.cs" Line="104" Column="92" IsPinned="True" />
+      <File FileName="Assets/Scripts/Final/PlacePoints.cs" Line="9" Column="1" />
+      <File FileName="Assets/Scripts/Final/SendToArduino.cs" Line="1" Column="1" />
+      <File FileName="Assets/MeshNavigator.cs" />
+      <File FileName="Assets/Grafics.cs" />
+      <File FileName="Assets/Scripts/HiResScreenShots.cs" />
+      <File FileName="Assets/Scripts/Final/Restart.cs" />
+      <File FileName="Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_ScrollbarEventHandler.cs" />
+      <File FileName="Assets/ValueChanges.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="36b9f54c-4493-41da-a6e4-729f0770d5ab" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4d121f9e-27b2-477b-b8ab-bae1c8f5ed7c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

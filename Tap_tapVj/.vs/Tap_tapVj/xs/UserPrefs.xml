@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{E9E4249E-590C-598E-FE7A-39F5AA7DDD85}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CreateLine.cs">
+    <Files>
+      <File FileName="Assets/MidiJack/Example Delegate/DelegateTester.cs" Line="1" Column="1" />
+      <File FileName="Assets/MidiJack/Example Note/NoteIndicatorGroup.cs" Line="37" Column="48" />
+      <File FileName="Assets/MidiJack/Example Note/NoteIndicator.cs" Line="10" Column="34" />
+      <File FileName="Assets/CreateLine.cs" Line="4" Column="18" />
+      <File FileName="Assets/MidiJack/MidiMaster.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/$kdtree_166.cs" Line="22" Column="20" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6b0656b3-00db-4171-a287-7727e3956e98" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,62 +1,75 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.AI;
+
 
 public class PlacePoints : MonoBehaviour {
     public GameObject prefab;
+
     public bool isConvex = false;
-    //int t;
     Vector3 center = new Vector3(0, 0, 0);
-    //public Transform center;
     MeshFilter mF;
-    Mesh mesh;
     public int maxPoints = 10;
-    GameObject[] objects;
+    public List < GameObject> objects = new List<GameObject>();
     public  Material color;
     public GameObject plane;
     public int _case;
     public int step = 10;
     public float maxX, maxZ;
     Vector3[] baseVertices ;
-    public int zPos, xPos, stroed;
-    public int [] zpos = new int[0];
-   public  int m1, m2, m3;
-    public int pM1, pM2, pM3;
-
-
-    //int pl
-    void Awake() {
-        zpos = new int[(int)step];
-        for (int i = 0; i < step; i++)
+    float  zPos, xPos, stroed;
+ 
+    public int SetStae 
+    {
+        get
         {
-            if(i==0) zpos[i] =(int)-(step *5);
-            if (i >= 1) zpos[i] = zpos[i-1] + (int)Random.Range(10,15);
+            return _case;
+        }
+        set
+        {
+            _case = value;
+        }
+    }
 
+
+    GameObject @object;
+    //int pl
+    void Start() {
+        @object = new GameObject("Cont");
+        if (_case != 1)
+        { 
+           GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().enabled = false;
+           GetComponent<MeshNavigator>().enabled = false;
         }
 
-
-        if (_case == 1)
+        if (_case == 1 | _case == 2)
         {
             if (plane == null)
             {
                 plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
                 mF = plane.GetComponent<MeshFilter>();
-                mF.mesh = UpdateMesh(mF.mesh, (maxX / 2 / 5) * 10, (maxZ / 2 / 5) * 10);
+                mF.mesh = UpdateMesh(mF.mesh, (maxX / 2 / 5), (maxZ / 2 / 5));
                 //mF.transform.position = new Vector3(160,0,300);
-                plane.GetComponent<MeshRenderer>().sharedMaterial = color;
+                plane.GetComponent<MeshRenderer>().enabled = false;
             }
             else
             {
                 mF = plane.GetComponent<MeshFilter>();
             }
-            //PointsInstance();
-            plane.transform.position = new Vector3(0, -1, 0);
+            plane.transform.position = new Vector3(0, -3, 0);
+
+
         }
         else
         {
-            //zPos = (int)-maxZ;
-            //PointsInstance();
+            maxZ /= 2;
+
         }
+        zPos = -maxZ;
 
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -64,7 +77,15 @@ public class PlacePoints : MonoBehaviour {
             DestroyObjects();
             PointsInstance();
         }
+        for (int i = 0; i < objects.Count; i++)
+        {
+            if (objects[i] == null) objects.Remove(objects[i]);
+        }
+        
+        if (objects.Count == 0)
+            PointsInstance();
     }
+
     public void  PointsInstance()
     {
 
@@ -77,70 +98,60 @@ public class PlacePoints : MonoBehaviour {
                     Quaternion rot = Quaternion.FromToRotation(Vector3.forward, center - point);
                     rot = new Quaternion(0, 0, 0, 0);
                     GameObject temp = Instantiate(prefab, point, rot);
-                    temp.name = "point";
+                    temp.name = "point" + i;
+                    temp.gameObject.layer = 1;
+                    temp.transform.SetParent(@object.transform);
+                    objects.Add(temp);
                 }
                 break;
 
             case 2:
-
-
-                //zPos ++;
-                if (zPos >= maxZ | zPos < -maxZ)
-                {
-                    stroed += 1;
-                    xPos = stroed;
-                    zPos = 0;
-                }
-                zPos = zPos+(int)step;
-                //xPos= (int)Mathf.Sign(xPos * Time.deltaTime);
-                //xPos += (int)Mathf.Cos(xPos) + (int)Mathf.Sign(xPos) + (int)Mathf.Sign(zPos) / (int)Mathf.Sign(xPos * Time.deltaTime);
-
-                //xPos = (int)Mathf.Cos(xPos) - (int)Mathf.Sin(xPos * zPos * stroed) + xPos;
-                //xPos += (int)Mathf.Sin(zpos[zPos]) + (int)Mathf.Cos(xPos * zpos[zPos] * stroed) * (int)Mathf.Atan(xPos);
-
-                //m1 += Random.Range(pM3, step);
-                //m2 = Random.Range((int)-maxX,(int)maxX);
-                //m3 = Random.Range(pM1,(int)maxX/17);
-                //if (m1 > maxZ)
-                //{
-                //    m1 = 0;
-                //    m3 = 0;
-                //}
-                //Vector3 point1 = new Vector3(m2,0, m1 + m3);
-
-                //pM1 = m1;
-                //pM2 = m2;
-                //pM3 = m3;
-                xPos = (int)Mathf.Cos(zPos) + (int)Mathf.Cos(xPos) * (int)Time.timeSinceLevelLoad;
-                //xPos += 1; 
-                //xPos = (int)Random.Range(-maxX, maxX);
-                Vector3 point2 = new Vector3(xPos, 0, zPos +1 );
-                Quaternion rot2 = new Quaternion(0, 0, 0, 0);
-                GameObject temp2 = Instantiate(prefab, point2, rot2);
-                //temp.name = "point";
                 
+                for (int i = 0; i < maxPoints; i++)
+                {
+                    Vector3 point = mF.mesh.GetRandomPointOnSurface();
+                    Quaternion rot = Quaternion.FromToRotation(Vector3.forward, center - point);
+                    rot = new Quaternion(0, 0, 0, 0);
+                    GameObject temp = Instantiate(prefab, point, rot);
+                    temp.name = "point" + i;
+                    temp.tag = "FD";
+                    temp.gameObject.layer = 4;
+                    temp.transform.SetParent(@object.transform);
+                    objects.Add(temp);
+                }
+                //FindObjectOfType<MeshNavigator>().enabled = false;
+
                 break;
 
+            case 3:
 
+                zPos += Random.Range(1,step);
+                if (zPos >= maxZ | zPos < -maxZ)
+                {
+                    zPos = -maxZ ;
+                }
+                float t = Time.deltaTime;
+                double angle = zPos * t * System.Math.PI / 180;
+                float x = Random.Range(-maxX, maxX);
+                 //x = Random.Range(-x, maxX);
+                 
 
+                xPos = x;
+                Vector3 point2 = new Vector3(xPos, 0, zPos);
+                Quaternion rot2 = new Quaternion(0, 0, 0, 0);
+                GameObject temp2 = Instantiate(prefab, point2, rot2);
+                temp2.tag = "FD";
+                objects.Add(temp2);
+                //FindObjectOfType<MeshNavigator>().enabled = false;
+                break;
         }
-
-
-
-
     }
-        
 
-
-
-   public  void DestroyObjects()
+   public void DestroyObjects()
     {
-        objects = new GameObject[maxPoints];
-        objects = GameObject.FindGameObjectsWithTag("FD");
-        for (var i = 0; i < objects.Length; i++) Destroy(objects[i]);
+        objects = new List<GameObject>(maxPoints);
+        for (var i = 0; i < objects.Count; i++) Destroy(objects[i]);
     }
-
-
 
     Mesh UpdateMesh(Mesh aMesh, float scaleX, float scaleZ)
     {
