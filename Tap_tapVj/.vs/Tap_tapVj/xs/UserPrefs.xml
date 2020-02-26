@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CreateLine.cs">
     <Files>
       <File FileName="Assets/MidiJack/Example Delegate/DelegateTester.cs" Line="1" Column="1" />
-      <File FileName="Assets/MidiJack/Example Note/NoteIndicatorGroup.cs" Line="1" Column="1" />
+      <File FileName="Assets/MidiJack/Example Note/NoteIndicatorGroup.cs" />
       <File FileName="Assets/MidiJack/Example Note/NoteIndicator.cs" />
       <File FileName="Assets/CreateLine.cs" Line="1" Column="1" />
       <File FileName="Assets/MidiJack/MidiMaster.cs" />
@@ -12,7 +12,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="10d73b3e-c5a3-4305-b2cb-5bc81d0f3e90" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fd9a998a-b8b2-430c-b088-2d7a47767b03" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

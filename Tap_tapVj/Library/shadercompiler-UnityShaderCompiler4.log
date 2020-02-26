@@ -1,8 +1,28 @@
-Base path: '/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/PlaybackEngines'
+Base path: '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=14 insize=10003 outsize=6450 ok=1
+  api=14 insize=5893 outsize=5793 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=992 outsize=9088 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=6450 outsize=12124 ok=1
-
-Quitting shader compiler process
+  api=14 insize=9088 outsize=1655 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=12072 outsize=7395 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=7589 outsize=1552 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=7010 outsize=13541 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=13940 outsize=4410 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4124 outsize=7330 ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=22544 outsize=8759 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=2364 outsize=6312 kw=_EMISSION pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+Cmd: compileComputeKernel
+  api=14 insize=5874 outsize=2277 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2277 outsize=3192 ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=22551 outsize=1044 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1

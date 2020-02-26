@@ -166,7 +166,7 @@ public class CreateLine : MonoBehaviour
         if (knots.Count > 0)
         {
             vFX.SetVector3("attractor", knots[0]);
-            vFX.SetFloat("burst", 1);
+            vFX.SetFloat("burst", 0.01f);
         }
     }
 }

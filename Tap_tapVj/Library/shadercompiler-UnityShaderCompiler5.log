@@ -1,8 +1,34 @@
-Base path: '/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/PlaybackEngines'
+Base path: '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=14 insize=5871 outsize=2277 ok=1
+  api=14 insize=5893 outsize=1413 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=3971 outsize=4981 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4981 outsize=9135 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2557 outsize=1305 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1305 outsize=2197 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=12177 outsize=2075 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1977 outsize=11008 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=9635 outsize=2384 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=3447 outsize=10479 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=10489 outsize=4945 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=13940 outsize=10582 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=11045 outsize=16207 ok=1
 Cmd: compileSnippet
-  api=14 type=1 insize=22544 outsize=1044 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+  api=14 type=1 insize=2364 outsize=9692 kw=_EMISSION _ADDITIONAL_LIGHTS _RECEIVE_SHADOWS_OFF pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
 Cmd: compileSnippet
-  api=14 type=1 insize=22548 outsize=1044 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+  api=14 type=1 insize=2364 outsize=9692 kw=_EMISSION _ADDITIONAL_LIGHTS pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+Cmd: compileComputeKernel
+  api=14 insize=5870 outsize=2277 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2277 outsize=3190 ok=1
