@@ -17,7 +17,7 @@ public class NoteIndicator : MonoBehaviour
         _createLine = _gameObjects[0].GetComponent<CreateLine>();
         float note = MidiMaster.GetKey(MidiChannel.All, noteNumber);
         //Debug.Log(note);
-        transform.localScale = Vector3.one * (0.1f + MidiMaster.GetKey(MidiChannel.All,noteNumber));
+        transform.localScale = Vector3.one * (0.01f + MidiMaster.GetKey(MidiChannel.All,noteNumber));
         Color color = MidiMaster.GetKeyDown(noteNumber) ? Color.red : Color.white;
         MaterialPropertyBlock block = new MaterialPropertyBlock();
         block.SetColor("_EmissionColor", color);

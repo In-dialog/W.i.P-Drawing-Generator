@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{05B47B21-45CF-9288-EB79-5B766F6DA589}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.unity.render-pipelines.high-definition@6.9.0-preview/Runtime/Lighting/LightLoop/Deferred.compute">
+    <Files>
+      <File FileName="Assets/Scripts/MidiJack/Example Note/NoteIndicatorGroup.cs" Line="9" Column="36" />
+      <File FileName="Assets/Scripts/CreateLine.cs" Line="159" Column="24" />
+      <File FileName="Library/PackageCache/com.unity.render-pipelines.high-definition@6.9.0-preview/Runtime/Lighting/LightLoop/Deferred.compute" Line="84" Column="1" />
+      <File FileName="Assets/Scripts/MidiJack/Example Note/NoteIndicator.cs" Line="24" Column="60" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7231a0e6-bf70-483f-98a7-2c7c2b52436e" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

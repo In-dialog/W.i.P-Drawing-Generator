@@ -1,57 +1,50 @@
-Base path: /Applications/Unity/Unity.app/Contents
+Base path: '/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=5871 outsize=5873 ok=1
+Cmd: preprocessCompute
+  insize=10059 outsize=10061 ok=1
+Cmd: preprocess
+  insize=39400 outsize=660 ok=1
+Cmd: preprocessCompute
+  insize=1969 outsize=1971 ok=1
+Cmd: preprocessCompute
+  insize=5868 outsize=5870 ok=1
+Cmd: preprocessCompute
+  insize=10047 outsize=10049 ok=1
+Cmd: preprocess
+  insize=39392 outsize=660 ok=1
+Cmd: preprocessCompute
+  insize=1969 outsize=1971 ok=1
+Cmd: preprocessCompute
+  insize=5868 outsize=5870 ok=1
+Cmd: preprocessCompute
+  insize=10047 outsize=10049 ok=1
+Cmd: preprocess
+  insize=39392 outsize=660 ok=1
+Cmd: preprocessCompute
+  insize=1969 outsize=1971 ok=1
+Cmd: preprocessCompute
+  insize=5868 outsize=5870 ok=1
+Cmd: preprocessCompute
+  insize=10047 outsize=10049 ok=1
+Cmd: preprocess
+  insize=39392 outsize=660 ok=1
+Cmd: preprocessCompute
+  insize=1969 outsize=1971 ok=1
+Cmd: preprocessCompute
+  insize=5812 outsize=5814 ok=1
+Cmd: preprocessCompute
+  insize=10001 outsize=10003 ok=1
+Cmd: preprocess
+  insize=39392 outsize=660 ok=1
+Cmd: preprocessCompute
+  insize=1969 outsize=1971 ok=1
+Cmd: preprocessCompute
+  insize=5812 outsize=5814 ok=1
+Cmd: preprocessCompute
+  insize=10001 outsize=10003 ok=1
+Cmd: preprocess
+  insize=39392 outsize=660 ok=1
+Cmd: preprocessCompute
+  insize=1969 outsize=1971 ok=1
